@@ -7,14 +7,14 @@ const Dashboard = () => {
   return (
     <div className="dashboard-page">
       <div className="dashboard-header">
-        <h1>Student Barter System</h1>
+        <h1>STUDEX</h1>
         <p>Exchange what you have. Get what you need.</p>
       </div>
       <div className="particles-bg"></div>
 
 
       <div className="dashboard-grid">
-        <Link to="/create-offer" className="dashboard-card">
+        <Link to="/CreateOffer" className="dashboard-card">
           <FaPlusCircle className="dashboard-icon" />
           <h3>Create Offer</h3>
           <p>Post something you want to exchange.</p>

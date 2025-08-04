@@ -9,8 +9,8 @@ const Header = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const loginStatus = localStorage.getItem("isLoggedIn");
-    setIsLoggedIn(loginStatus === "true");
+    const status = localStorage.getItem("isLoggedIn");
+    setIsLoggedIn(status === "true");
   }, [location]);
 
   const handleLogout = () => {
@@ -19,29 +19,27 @@ const Header = () => {
     navigate("/login");
   };
 
-  const isStartOrLoginPage = location.pathname === "/" || location.pathname === "/login";
+  const isStartOrLogin = location.pathname === "/" || location.pathname === "/login";
 
   return (
-    <header className="main-header">
-      <div className="logo-container">
-        <img src={logo} alt="Logo" className="logo-img" />
-        <span className="logo-text">STUDEX</span>
+    <header className="custom-header">
+      <div className="header-left">
+        <img src={logo} alt="STUDEX Logo" className="custom-logo" />
+        <h1 className="brand-name">STUDEX</h1>
       </div>
 
-      <nav className="nav-links">
-        <NavLink to="/" className="nav-link">Home</NavLink>
-
-        {!isLoggedIn && isStartOrLoginPage && (
-          <NavLink to="/login" className="nav-link">Login</NavLink>
+      <div className="header-right">
+        <NavLink to="/" className="nav-item">Home</NavLink>
+        {isLoggedIn && !isStartOrLogin && (
+          <NavLink to="/profile" className="nav-item">Profile</NavLink>
         )}
-
-        {isLoggedIn && !isStartOrLoginPage && (
-          <>
-            <NavLink to="/profile" className="nav-link">Profile</NavLink>
-            <button className="nav-link logout-btn" onClick={handleLogout}>Logout</button>
-          </>
+        {!isLoggedIn && isStartOrLogin && (
+          <NavLink to="/login" className="nav-button">Login</NavLink>
         )}
-      </nav>
+        {isLoggedIn && !isStartOrLogin && (
+          <button className="nav-button logout" onClick={handleLogout}>Logout</button>
+        )}
+      </div>
     </header>
   );
 };

@@ -9,7 +9,7 @@ const Profile = () => {
     department: "",
     skills: "",
     bio: "",
-    image: "", // Base64 image
+    photo: "",
   });
 
   const [message, setMessage] = useState("");
@@ -24,56 +24,61 @@ const Profile = () => {
     setProfile((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleImageUpload = (e) => {
+  const handlePhotoChange = (e) => {
     const file = e.target.files[0];
-    if (!file) return;
-
-    const reader = new FileReader();
-    reader.onloadend = () => {
-      setProfile((prev) => ({ ...prev, image: reader.result }));
-    };
-    reader.readAsDataURL(file);
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = () => setProfile((prev) => ({ ...prev, photo: reader.result }));
+      reader.readAsDataURL(file);
+    }
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     localStorage.setItem("userProfile", JSON.stringify(profile));
-    setMessage("Profile updated successfully ✅");
+    setMessage("✅ Profile updated successfully!");
     setTimeout(() => setMessage(""), 3000);
   };
 
   return (
-    <div className="profile-wrapper">
-      <div className="profile-card">
-        <div className="profile-avatar">
-          {profile.image ? (
-            <img src={profile.image} alt="Profile" />
+    <div className="profile-page">
+      <h2>Your Profile</h2>
+      <form onSubmit={handleSubmit} className="profile-form">
+        <div className="photo-section">
+          {profile.photo ? (
+            <img src={profile.photo} alt="Profile" className="profile-photo" />
           ) : (
-            <div className="default-avatar">Upload Photo</div>
+            <div className="photo-placeholder">Upload Photo</div>
           )}
+          <input type="file" accept="image/*" onChange={handlePhotoChange} />
         </div>
 
-        <label className="profile-upload-wrapper">
-          Change Photo
-          <input type="file" accept="image/*" onChange={handleImageUpload} />
-        </label>
+        <div className="form-section">
+          <label>Name:</label>
+          <input name="name" value={profile.name} onChange={handleChange} required />
 
-        <h2>Your Profile</h2>
+          <label>Email:</label>
+          <input name="email" type="email" value={profile.email} onChange={handleChange} required />
 
-        <form onSubmit={handleSubmit}>
-          <input type="text" name="name" value={profile.name} onChange={handleChange} placeholder="Full Name" required />
-          <input type="email" name="email" value={profile.email} onChange={handleChange} placeholder="Email" required />
-          <input type="tel" name="phone" value={profile.phone} onChange={handleChange} placeholder="Phone" />
-          <input type="text" name="department" value={profile.department} onChange={handleChange} placeholder="Department" />
-          <input type="text" name="skills" value={profile.skills} onChange={handleChange} placeholder="Skills (comma-separated)" />
-          <textarea name="bio" rows="4" value={profile.bio} onChange={handleChange} placeholder="Short Bio..." />
+          <label>Phone:</label>
+          <input name="phone" type="tel" value={profile.phone} onChange={handleChange} />
+
+          <label>Department:</label>
+          <input name="department" value={profile.department} onChange={handleChange} />
           
+          <label>Year:</label>
+          <input name="yearr" value={profile.year} onChange={handleChange} />
+
+          <label>Skills:</label>
+          <input name="skills" value={profile.skills} onChange={handleChange} />
+
+          <label>Bio:</label>
+          <textarea name="bio" value={profile.bio} rows="4" onChange={handleChange}></textarea>
 
           <button type="submit">Save Changes</button>
-        </form>
-
-        {message && <p className="success">{message}</p>}
-      </div>
+        </div>
+      </form>
+      {message && <p className="success-message">{message}</p>}
     </div>
   );
 };

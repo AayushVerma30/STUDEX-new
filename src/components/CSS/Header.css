@@ -1,68 +1,82 @@
-.main-header {
-  background: #0d1b2a;
-  padding: 10px 30px;
+.custom-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: white;
-  font-family: 'Poppins', sans-serif;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  background: #0d1b2a;
+  color: #fff;
+  padding: 15px 30px;
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 999;
+  font-family: 'Poppins', sans-serif;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-.logo-container {
+/* Logo + Brand Name */
+.header-left {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
 }
 
-.logo-img {
+.custom-logo {
   height: 40px;
   width: 40px;
   object-fit: contain;
 }
 
-.logo-text {
-  font-size: 1.5rem;
+.brand-name {
+  font-size: 1.8rem;
   font-weight: 600;
   letter-spacing: 1px;
+  margin: 0;
 }
 
-.nav-links {
+/* Navigation */
+.header-center {
   display: flex;
-  align-items: center;
-  gap: 25px;
+  gap: 20px;
 }
 
-.nav-link {
-  color: white;
+.nav-item {
   text-decoration: none;
+  color: #fff;
+  padding: 10px;
   font-weight: 500;
-  position: relative;
-  padding: 6px 10px;
-  transition: color 0.2s ease;
+  transition: color 0.3s ease;
 }
 
-.nav-link:hover {
-  color: #7f9cf5;
+.nav-item:hover,
+.nav-item.active {
+  color: #90cdf4;
 }
 
-.nav-link.active {
-  border-bottom: 2px solid #7f9cf5;
-}
-
-.logout-btn {
-  background: transparent;
-  border: none;
-  color: white;
+/* Right side buttons */
+.header-right .nav-button {
+  background-color: transparent;
+  border: 2px solid #90cdf4;
+  color: #0d1b2a;
+  padding: 6px 15px;
+  border-radius: 5px;
   font-weight: 500;
   cursor: pointer;
-  padding: 6px 10px;
-  transition: color 0.2s ease;
+  transition: all 0.3s ease;
+  text-decoration: none;
 }
 
-.logout-btn:hover {
-  color: #ff6961;
+.nav-button:hover {
+  background-color: #90cdf4;
+  color: #0f2027;
+}
+
+.logout {
+  border-color: #f56565;
+  color: #f56565;
+  margin: 0%;
+  margin-left: 5px;
+}
+
+.logout:hover {
+  background-color: #f56565;
+  color: #fff;
 }
