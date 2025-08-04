@@ -9,6 +9,7 @@ import Profile from "./components/Profile";
 import Register from "./components/Register";
 import CreateOffer from "./components/CreateOffer";
 import ViewOffer from "./components/ViewOffers";
+import ExplorePage from "./components/ExplorePage";
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/createOffer" element={<CreateOffer />} />
         <Route path="/ViewOffers" element={<ViewOffer />} />
+        <Route path="/ExplorePage" element={<ExplorePage />} />
 
 
       </Routes>

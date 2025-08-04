@@ -26,6 +26,12 @@ const Dashboard = () => {
           <p>See what others are offering.</p>
         </Link>
 
+        <Link to="/ExplorePage" className="dashboard-card">
+          <FaEye className="dashboard-icon" />
+          <h3>Explore</h3>
+          <p>See what others are offering.</p>
+        </Link>
+
         <Link to="/create-need" className="dashboard-card">
           <FaBullhorn className="dashboard-icon" />
           <h3>Post a Need</h3>
