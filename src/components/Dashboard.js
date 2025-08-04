@@ -20,7 +20,7 @@ const Dashboard = () => {
           <p>Post something you want to exchange.</p>
         </Link>
 
-        <Link to="/offers" className="dashboard-card">
+        <Link to="/ViewOffers" className="dashboard-card">
           <FaEye className="dashboard-icon" />
           <h3>View Offers</h3>
           <p>See what others are offering.</p>

@@ -8,6 +8,7 @@ import Dashboard from "./components/Dashboard";
 import Profile from "./components/Profile";
 import Register from "./components/Register";
 import CreateOffer from "./components/CreateOffer";
+import ViewOffer from "./components/ViewOffers";
 
 
 function App() {
@@ -21,6 +22,8 @@ function App() {
         <Route path="/Profile" element={<Profile />} />
         <Route path="/register" element={<Register />} />
         <Route path="/createOffer" element={<CreateOffer />} />
+        <Route path="/ViewOffers" element={<ViewOffer />} />
+
 
       </Routes>
       <Footer />
