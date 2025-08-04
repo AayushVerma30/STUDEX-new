@@ -1,0 +1,134 @@
+.profile-wrapper {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle at 20% 20%, #1f2c4d, #0d1b2a);
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+  padding: 40px 20px;
+  animation: fadeIn 1.5s ease;
+}
+
+.profile-card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 40px 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+  width: 100%;
+  max-width: 500px;
+  backdrop-filter: blur(10px);
+}
+
+.profile-card h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-weight: 600;
+  font-size: 1.8rem;
+}
+
+.profile-avatar {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.profile-avatar img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 2px solid #ffffff30;
+}
+
+form input, form textarea {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 8px;
+  background: #ffffff15;
+  color: white;
+  font-size: 0.95rem;
+}
+
+form input::placeholder,
+form textarea::placeholder {
+  color: #cccccc;
+}
+
+form textarea {
+  resize: none;
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  background: #7f9cf5;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background: #5f7de0;
+}
+
+.success {
+  margin-top: 15px;
+  text-align: center;
+  color: #90ee90;
+  font-size: 0.95rem;
+}
+
+/* Simple fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.profile-avatar {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.profile-avatar img {
+  width: 110px;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #ffffff30;
+  box-shadow: 0 0 10px rgba(0,0,0,0.4);
+}
+
+.default-avatar {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background: #ffffff20;
+  color: #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  border: 2px dashed #cccccc40;
+}
+
+
+.profile-upload-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+

@@ -1,0 +1,82 @@
+.dashboard-page {
+  min-height: 100vh;
+background: linear-gradient(135deg, #111d5e, #0f3057, #00587a);
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  padding: 40px 20px;
+}
+
+.dashboard-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.dashboard-header h1 {
+  font-size: 2.8rem;
+  margin-bottom: 10px;
+  font-weight: 700;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+.dashboard-header p {
+  font-size: 1.2rem;
+  color: #dddddd;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.dashboard-card {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 30px 20px;
+  border-radius: 15px;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+}
+
+.dashboard-card:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-6px);
+}
+
+.dashboard-icon {
+  font-size: 2.8rem;
+  margin-bottom: 15px;
+  color: #00d4ff; /* Neon Cyan */
+}
+
+.dashboard-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.dashboard-card p {
+  font-size: 0.95rem;
+  color: #cccccc;
+}
+
+.dashboard-page {
+  min-height: 100vh;
+  background: linear-gradient(-45deg, #0f0c29, #302b63, #24243e, #0f0c29);
+  background-size: 400% 400%;
+  animation: gradientBG 12s  infinite;
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  padding: 40px 20px;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
