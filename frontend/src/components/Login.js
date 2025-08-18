@@ -14,8 +14,9 @@ const Login = () => {
   const handleLogin = (e) => {
     e.preventDefault();
     if (email === TEMP_EMAIL && password === TEMP_PASSWORD) {
-      localStorage.setItem("auth", "true");
-      navigate("/dashboard");
+      // ✅ Yahan same key use karo jo Header me check ho rahi hai
+      localStorage.setItem("isLoggedIn", "true");
+      navigate("/dashboard"); // ya "/" agar tum home pe bhejna chahte ho
     } else {
       setError("Invalid email or password");
     }

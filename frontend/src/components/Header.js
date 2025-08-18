@@ -19,8 +19,6 @@ const Header = () => {
     navigate("/login");
   };
 
-  const isStartOrLogin = location.pathname === "/" || location.pathname === "/login";
-
   return (
     <header className="custom-header">
       <div className="header-left">
@@ -30,14 +28,22 @@ const Header = () => {
 
       <div className="header-right">
         <NavLink to="/" className="nav-item">Home</NavLink>
-        {isLoggedIn && !isStartOrLogin && (
+
+        {/* Profile dikhega jab login ho */}
+        {isLoggedIn && (
           <NavLink to="/profile" className="nav-item">Profile</NavLink>
         )}
-        {!isLoggedIn && isStartOrLogin && (
+
+        {/* Login button sirf tab dikhega jab login nahi ho */}
+        {!isLoggedIn && (
           <NavLink to="/login" className="nav-button">Login</NavLink>
         )}
-        {isLoggedIn && !isStartOrLogin && (
-          <button className="nav-button logout" onClick={handleLogout}>Logout</button>
+
+        {/* Logout sirf tab dikhega jab login ho */}
+        {isLoggedIn && (
+          <button className="nav-button logout" onClick={handleLogout}>
+            Logout
+          </button>
         )}
       </div>
     </header>
